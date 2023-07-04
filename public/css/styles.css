@@ -1,6 +1,24 @@
 html {
     font-size: 24px;
+    font-family: "Andale mono", "Courier new", Helvetica, sans-serif;
     /* colors are set in javascript */
     color: var(--color-primary);
     background-color: var(--color-contrast);
+    line-height: 1.5rem;
+}
+
+body {
+    padding: 1rem
+}
+
+p {
+    line-height: 2rem;
+}
+
+.menu {
+    display: flex
+}
+
+.menu-item {
+    margin-right: 1.5rem;
 }
