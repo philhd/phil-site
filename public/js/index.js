@@ -1,6 +1,9 @@
 // Partially taken from https://googlechrome.github.io/samples/css-custom-properties/index.html
 'use strict';
 
+const white = 'rgb(251, 251, 241)';
+const black = 'rgb(18, 13, 23)';
+
 // Auxiliary method. Retrieves and sanitises the value of a custom property.
 const getVariable = function(styles, propertyName) {
   return String(styles.getPropertyValue(propertyName)).trim();
@@ -13,18 +16,19 @@ const setDocumentVariable = function(propertyName, value) {
 
 const toLightMode = function(){
     console.log('switching to light mode');
-    setDocumentVariable('--color-primary', 'black');
-    setDocumentVariable('--color-contrast', 'white');
+    setDocumentVariable('--color-primary', black);
+    setDocumentVariable('--color-contrast', white);
 }
 
 const toDarkMode = function(){
     console.log('switching to dark mode');
-    setDocumentVariable('--color-primary', 'white');
-    setDocumentVariable('--color-contrast', 'black');
+    setDocumentVariable('--color-primary', white);
+    setDocumentVariable('--color-contrast', black);
 }
 
 window.addEventListener('load', function() {
     console.log('on load');
+    toLightMode();
     this.document.getElementById('dark-mode').addEventListener('change', (evt) => {
         if(evt.target.checked){
             toDarkMode()
