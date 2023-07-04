@@ -1,3 +1,10 @@
+:root {
+    --color-primary: black;
+    --color-contrast: white;
+}
+
 html {
-    font-size: 128px;
+    font-size: 24px;
+    color: var(--color-primary);
+    background-color: var(--color-contrast);
 }
