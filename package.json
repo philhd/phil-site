@@ -1,0 +1,23 @@
+{
+  "name": "phil-site",
+  "version": "1.0.0",
+  "description": "Phil's website",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philhd/phil-site.git"
+  },
+  "author": "Philip Hardegen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/philhd/phil-site/issues"
+  },
+  "homepage": "https://github.com/philhd/phil-site#readme",
+  "dependencies": {
+    "node-static": "^0.7.11"
+  }
+}
