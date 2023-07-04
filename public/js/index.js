@@ -1,8 +1,8 @@
 // Partially taken from https://googlechrome.github.io/samples/css-custom-properties/index.html
 'use strict';
 
-const white = 'rgb(251, 251, 241)';
-const black = 'rgb(18, 13, 23)';
+const white = 'rgb(251, 248, 241)';
+const black = 'rgb(19, 15, 23)';
 
 // Auxiliary method. Retrieves and sanitises the value of a custom property.
 const getVariable = function(styles, propertyName) {
