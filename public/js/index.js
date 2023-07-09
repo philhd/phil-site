@@ -28,6 +28,12 @@ const toDarkMode = function(){
 
 window.addEventListener('load', function() {
     console.log('on load');
+
+    // Load custom elements
+    const navMenuElementScript = this.document.createElement('script');
+    navMenuElementScript.src = './components/nav-menu.js';
+    customElements.define('nav-menu', NavMenu);
+
     toLightMode();
     this.document.getElementById('dark-mode').addEventListener('change', (evt) => {
         if(evt.target.checked){

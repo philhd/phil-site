@@ -15,9 +15,6 @@ p {
     line-height: 2rem;
 }
 
-.menu {
-    display: flex
-}
 
 .menu-item {
     margin-right: 1.5rem;
