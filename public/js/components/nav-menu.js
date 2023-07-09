@@ -1,20 +1,14 @@
-class NavMenu extends HTMLElement {
+customElements.define('nav-menu',
+  class extends HTMLElement {
     constructor() {
-        super()
+      super();
 
-        const shadow = this.attachShadow({ mode: 'open' });
+      const template = document.getElementById('nav-menu');
+      const templateContent = template.content;
 
-        const style = document.createElement('style');
-        style.textContent = `
-            .menu {
-                display: flex
-            }
-        `;
-
-        const wrapper = document.createElement('div');
-        wrapper.setAttribute('class', 'menu');
-
-        shadow.appendChild(style);
-        shadow.appendChild(wrapper);
+      this.attachShadow({mode: 'open'}).appendChild(
+        templateContent.cloneNode(true)
+      );
     }
-}
+  }
+);

@@ -1,44 +1,39 @@
-// Partially taken from https://googlechrome.github.io/samples/css-custom-properties/index.html
 'use strict';
 
 const white = 'rgb(251, 248, 241)';
 const black = 'rgb(19, 15, 23)';
 
+// Partially taken from https://googlechrome.github.io/samples/css-custom-properties/index.html
 // Auxiliary method. Retrieves and sanitises the value of a custom property.
-const getVariable = function(styles, propertyName) {
-  return String(styles.getPropertyValue(propertyName)).trim();
+const getVariable = function (styles, propertyName) {
+    return String(styles.getPropertyValue(propertyName)).trim();
 };
 
 // Auxiliary method. Sets the value of a custom property at the document level.
-const setDocumentVariable = function(propertyName, value) {
-  document.documentElement.style.setProperty(propertyName, value);
+const setDocumentVariable = function (propertyName, value) {
+    document.documentElement.style.setProperty(propertyName, value);
 };
 
-const toLightMode = function(){
+const toLightMode = function () {
     console.log('switching to light mode');
     setDocumentVariable('--color-primary', black);
     setDocumentVariable('--color-contrast', white);
 }
 
-const toDarkMode = function(){
+const toDarkMode = function () {
     console.log('switching to dark mode');
     setDocumentVariable('--color-primary', white);
     setDocumentVariable('--color-contrast', black);
 }
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     console.log('on load');
-
-    // Load custom elements
-    const navMenuElementScript = this.document.createElement('script');
-    navMenuElementScript.src = './components/nav-menu.js';
-    customElements.define('nav-menu', NavMenu);
 
     toLightMode();
     this.document.getElementById('dark-mode').addEventListener('change', (evt) => {
-        if(evt.target.checked){
+        if (evt.target.checked) {
             toDarkMode()
-        }else{
+        } else {
             toLightMode()
         }
     });
