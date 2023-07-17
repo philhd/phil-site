@@ -1,13 +1,22 @@
+const template = document.createElement('template');
+template.innerHTML = `
+  <style>
+    .nav-menu {
+        display: flex
+    }
+  </style>
+  <div class="nav-menu">
+      <slot></slot>
+  </div>
+`;
+
 customElements.define('nav-menu',
   class extends HTMLElement {
     constructor() {
       super();
 
-      const template = document.getElementById('nav-menu');
-      const templateContent = template.content;
-
-      this.attachShadow({mode: 'open'}).appendChild(
-        templateContent.cloneNode(true)
+      this.attachShadow({ mode: 'open' }).appendChild(
+        template.content.cloneNode(true)
       );
     }
   }
