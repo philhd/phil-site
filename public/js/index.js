@@ -28,8 +28,6 @@ const toDarkMode = function () {
 
 window.addEventListener('load', function () {
     console.log('on load');
-
-    this.customElements.define('menu-item', MenuItem);
     
     toLightMode();
     this.document.getElementById('dark-mode').addEventListener('change', (evt) => {

@@ -1,22 +1,23 @@
-class MenuItem extends HTMLElement {
-    constructor() {
-        super();
+const menuItemTemplate = document.createElement('template');
+menuItemTemplate.innerHTML = `
+    <style>
+        .menu-item {
+            margin-right: 1.5rem;
+        }
+    </style>
+    <h2 class="menu-item">
+        <slot></slot>
+    </h2>
+`;
 
-        const shadow = this.attachShadow({ mode: 'open' });
+customElements.define('menu-item',
+    class extends HTMLElement {
+        constructor() {
+            super();
 
-        const style = document.createElement('style');
-        style.textContent = `
-            .menu-item {
-                margin-right: 1.5rem;
-            }
-        `;
-
-        const elem = document.createElement('h2');
-        elem.setAttribute('class', 'menu-item');
-        const text = this.getAttribute('data-text');
-        elem.textContent = text;
-
-        shadow.appendChild(style);
-        shadow.appendChild(elem);
+            this.attachShadow({ mode: 'open' }).appendChild(
+                menuItemTemplate.content.cloneNode(true)
+            );
+        }
     }
-}
+);
