@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Phil's website",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "test",
     "start": "node index.js"
@@ -18,6 +19,6 @@
   },
   "homepage": "https://github.com/philhd/phil-site#readme",
   "dependencies": {
-    "node-static": "^0.7.11"
+    "serve-handler": "^6.1.6"
   }
 }
